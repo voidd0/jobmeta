@@ -1,0 +1,4 @@
+/* Intentionally empty. All styles live inside the shadow DOM in autofill.js
+   so we can never accidentally bleed jobmeta CSS into the host page. The
+   manifest still references this file because some reviewers flag missing
+   resources as an integrity issue — keeping it as a noop satisfies them. */

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jobmeta — your profile</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+
+<main class="wrap">
+
+  <header class="hdr">
+    <img src="../icons/icon-48.png" alt="" class="logo">
+    <div>
+      <h1>your jobmeta profile</h1>
+      <p>used to autofill ATS forms and tailor cover letters. lives on your device — never sent except when you click "generate".</p>
+    </div>
+    <a class="open-app" href="app.html">open jobmeta app →</a>
+  </header>
+
+  <section class="card profiles" id="profiles-card">
+    <div class="card-head">
+      <h2>profiles</h2>
+      <span class="pill" id="profile-pill">1 of 1 used</span>
+    </div>
+    <div class="profile-list" id="profile-list"></div>
+    <div class="profile-actions">
+      <button id="add-profile" class="ghost-btn" disabled>+ new profile</button>
+      <button id="rename-profile" class="ghost-btn">rename</button>
+      <button id="delete-profile" class="ghost-btn danger" disabled>delete</button>
+    </div>
+    <p class="hint" id="profiles-hint">free tier supports 1 profile. Pro unlocks up to 5 profiles for different role-types (e.g. "engineering" vs "product").</p>
+  </section>
+
+  <section class="card">
+    <h2>basics</h2>
+    <div class="grid">
+      <label>first name<input id="firstName" type="text" autocomplete="off"></label>
+      <label>last name<input id="lastName" type="text" autocomplete="off"></label>
+      <label>email<input id="email" type="email" autocomplete="off"></label>
+      <label>phone<input id="phone" type="tel" autocomplete="off"></label>
+      <label class="full">city / location<input id="city" type="text" autocomplete="off"></label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>online presence</h2>
+    <div class="grid">
+      <label class="full">LinkedIn URL<input id="linkedin" type="url" placeholder="https://linkedin.com/in/yourhandle" autocomplete="off"></label>
+      <label class="full">GitHub URL <span class="opt">(optional)</span><input id="github" type="url" placeholder="https://github.com/yourhandle" autocomplete="off"></label>
+      <label class="full">portfolio / personal site <span class="opt">(optional)</span><input id="portfolio" type="url" autocomplete="off"></label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>narrative</h2>
+    <label class="full">summary
+      <textarea id="summary" rows="4" placeholder="2–3 sentences. who you are, what you build, what you're looking for."></textarea>
+    </label>
+    <label class="full">skills <span class="opt">(comma-separated, top 30)</span>
+      <textarea id="skills" rows="2" placeholder="typescript, system design, ml infra, distributed systems, postgres"></textarea>
+    </label>
+    <label class="full">experience highlights <span class="opt">(one per line, top 20)</span>
+      <textarea id="experience" rows="6" placeholder="Senior Engineer @ Acme — led migration from monolith to event-driven, cut p99 latency 60%
+Founding Engineer @ BetaCo — shipped first 3 products, hired team of 8"></textarea>
+    </label>
+  </section>
+
+  <section class="card">
+    <h2>cover-letter defaults</h2>
+    <div class="grid">
+      <label>tone
+        <select id="tone">
+          <option value="professional">professional</option>
+          <option value="warm">warm</option>
+          <option value="concise">concise</option>
+          <option value="enthusiastic">enthusiastic</option>
+        </select>
+      </label>
+      <label>language
+        <select id="language">
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="it">Italiano</option>
+          <option value="pt">Português</option>
+          <option value="nl">Nederlands</option>
+          <option value="pl">Polski</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="zh">中文</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <div class="actions">
+    <button id="save" class="cta">save profile</button>
+    <button id="export" class="ghost-btn">export JSON</button>
+    <span id="msg" class="msg"></span>
+  </div>
+
+  <footer class="ftr">
+    <p>
+      <a href="https://extensions.voiddo.com/jobmeta/privacy/" target="_blank" rel="noopener">what we store · privacy</a>
+      <span class="dot">·</span>
+      <a href="https://extensions.voiddo.com/jobmeta/terms/"   target="_blank" rel="noopener">terms</a>
+      <span class="dot">·</span>
+      <a href="https://extensions.voiddo.com/jobmeta/refund/"  target="_blank" rel="noopener">refund</a>
+      <span class="dot">·</span>
+      <a href="https://extensions.voiddo.com/jobmeta/pricing/" target="_blank" rel="noopener">manage license</a>
+    </p>
+  </footer>
+</main>
+
+<script src="../shared/constants.js"></script>
+<script src="../shared/browser.js"></script>
+<script src="options.js"></script>
+</body>
+</html>

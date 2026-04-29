@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jobmeta</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+<main>
+  <header class="hdr">
+    <img src="../icons/icon-32.png" alt="" class="logo">
+    <div class="brand-block">
+      <div class="brand">jobmeta</div>
+      <div class="tag">apply faster · write better</div>
+    </div>
+    <div class="plan-badge" id="plan-badge">FREE</div>
+  </header>
+
+  <section class="quota" id="quota-block">
+    <div class="quota-row">
+      <span class="quota-label">cover letters</span>
+      <span class="quota-val" id="letters-val">0 / 10</span>
+    </div>
+    <div class="quota-bar"><div class="quota-fill" id="letters-fill"></div></div>
+    <div class="quota-row">
+      <span class="quota-label">match scores</span>
+      <span class="quota-val" id="matches-val">0 / 5</span>
+    </div>
+    <div class="quota-bar"><div class="quota-fill" id="matches-fill"></div></div>
+    <div class="quota-resets" id="quota-resets">resets at the start of next month</div>
+  </section>
+
+  <section class="quota pro-state" id="pro-block" hidden>
+    <div class="pro-line">
+      <div class="pro-title">Pro · unlimited letters &amp; matches</div>
+      <div class="pro-sub" id="pro-sub">key verified</div>
+    </div>
+  </section>
+
+  <section class="actions">
+    <button id="open-app" class="act act-primary">
+      <span class="act-icon">✎</span>
+      <span class="act-text">
+        <strong>open jobmeta app</strong>
+        <em>write letters · score matches · track apps</em>
+      </span>
+    </button>
+    <button id="open-options" class="act">
+      <span class="act-icon">◉</span>
+      <span class="act-text">
+        <strong>my profile</strong>
+        <em>name · resume · skills · experience</em>
+      </span>
+    </button>
+  </section>
+
+  <section class="block license-block" id="license-block">
+    <div class="license-header" id="license-toggle">
+      <span>have a license key?</span>
+      <span class="chev" id="license-chev">▾</span>
+    </div>
+    <div class="license-body" id="license-body" hidden>
+      <div class="row">
+        <input id="license-key" type="text" placeholder="JM-XXXX-XXXX-XXXX" autocomplete="off" spellcheck="false">
+        <button id="check-btn">check</button>
+      </div>
+      <div id="license-msg" class="hint"></div>
+      <button id="forget-btn" class="link" hidden>sign out of Pro</button>
+    </div>
+  </section>
+
+  <button id="upgrade-cta" class="upgrade">unlock Pro · $4.99/mo →</button>
+
+  <footer class="ftr">
+    <a href="https://extensions.voiddo.com/jobmeta/" target="_blank" rel="noopener">extensions.voiddo.com/jobmeta</a>
+    <span class="dot">·</span>
+    <span class="ver" id="ver">v2.0.0</span>
+  </footer>
+</main>
+
+<script src="../shared/constants.js"></script>
+<script src="../shared/browser.js"></script>
+<script src="popup.js"></script>
+</body>
+</html>

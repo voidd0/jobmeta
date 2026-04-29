@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>welcome to jobmeta</title>
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+
+<main class="wrap">
+
+  <header class="hero">
+    <img src="../icons/icon-128.png" alt="" class="logo">
+    <h1>welcome to <span class="brand">jobmeta</span></h1>
+    <p class="lead">apply to jobs faster. on every major ATS. with a tailored cover letter that actually sounds like you.</p>
+  </header>
+
+  <section class="card consent">
+    <h2>before we start — what jobmeta does with your data</h2>
+    <ul class="legal-points">
+      <li><strong>your profile lives on your machine.</strong> name, resume bullets, skills — stored locally, synced across browsers if you're signed into Chrome/Firefox sync.</li>
+      <li><strong>cover letters are drafted on our server.</strong> when you click "generate", we send the job description + your profile to scrb.voiddo.com and stream back a draft. the request is not retained beyond 24 hours.</li>
+      <li><strong>match scores work the same way.</strong> we score the fit between you and a job description on the server, return the score + reasoning, and forget the request.</li>
+      <li><strong>we don't sell your data.</strong> we don't ship it to advertisers. we don't fingerprint you. read the <a href="https://extensions.voiddo.com/jobmeta/privacy/" target="_blank" rel="noopener">privacy policy</a> for the details.</li>
+    </ul>
+    <button id="consent-btn" class="cta-primary">got it · let's set up my profile →</button>
+  </section>
+
+  <section class="features">
+    <h2>what's inside</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <div class="f-icon">⚡</div>
+        <h3>autofill on 11 ATS</h3>
+        <p>Workday, Greenhouse, Lever, Ashby, BambooHR, iCIMS, Jobvite, SmartRecruiters, SuccessFactors, Taleo, Breezy. one click, all the right fields.</p>
+      </div>
+      <div class="feature">
+        <div class="f-icon">✎</div>
+        <h3>tailored cover letters</h3>
+        <p>reads the job description on the page you're on, drafts a 3-paragraph letter in your voice. four tones. eleven languages.</p>
+      </div>
+      <div class="feature">
+        <div class="f-icon">◎</div>
+        <h3>match-meter score</h3>
+        <p>before you spend an hour applying — see your profile-fit score. matched skills, gaps to address, a verdict. on every job page.</p>
+      </div>
+      <div class="feature">
+        <div class="f-icon">⌥</div>
+        <h3>privacy by default</h3>
+        <p>profile lives on your device. no PII in our database. no analytics chasing you around the web.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tiers">
+    <h2>free vs Pro</h2>
+    <div class="tier-grid">
+      <div class="tier free">
+        <div class="t-name">free · forever</div>
+        <ul>
+          <li>unlimited autofill on 11 ATS</li>
+          <li>10 cover letters / month</li>
+          <li>5 match scores / month</li>
+          <li>1 profile</li>
+        </ul>
+      </div>
+      <div class="tier pro">
+        <div class="t-name">Pro · $4.99/mo or $39/yr</div>
+        <ul>
+          <li>everything in free</li>
+          <li><strong>unlimited</strong> letters &amp; matches</li>
+          <li>up to 5 profiles (different roles)</li>
+          <li>sync across devices</li>
+          <li>AI question-rewriter (coming soon)</li>
+          <li>priority queue</li>
+        </ul>
+        <a class="t-cta" href="https://extensions.voiddo.com/jobmeta/pricing/" target="_blank" rel="noopener">see Pro →</a>
+      </div>
+    </div>
+    <p class="tiers-note">no credit card to start. Pro is for when you're applying daily and the free quota gets in your way.</p>
+  </section>
+
+  <footer class="ftr">
+    <p>made by <a href="https://voiddo.com" target="_blank" rel="noopener">vøiddo</a> · <a href="https://extensions.voiddo.com/jobmeta/privacy/" target="_blank" rel="noopener">privacy</a> · <a href="https://extensions.voiddo.com/jobmeta/terms/" target="_blank" rel="noopener">terms</a> · <a href="https://extensions.voiddo.com/jobmeta/refund/" target="_blank" rel="noopener">refund</a></p>
+  </footer>
+
+</main>
+
+<script src="../shared/constants.js"></script>
+<script src="../shared/browser.js"></script>
+<script src="welcome.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+/* jobmeta welcome — shown on first install and from the popup. Uses the
+   same dark glass look as the extensions.voiddo.com portal so it feels
+   continuous with the rest of vøiddo. */
+
+:root {
+  --bg: #0a0a10;
+  --bg-2: #11111a;
+  --bg-3: #1a1a26;
+  --line: rgba(167, 139, 250, 0.18);
+  --line-2: rgba(255, 255, 255, 0.06);
+  --text: #f3f3f8;
+  --text-dim: #94a3b8;
+  --accent: #8b5cf6;
+  --accent-2: #6366f1;
+  --gold: #fbbf24;
+  --green: #10b981;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(99,102,241,.18), transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(245,158,11,.10), transparent 50%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  font: 15px/1.65 -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+}
+a { color: #c4b5fd; }
+a:hover { color: #fbbf24; }
+
+.wrap { max-width: 920px; margin: 0 auto; padding: 60px 24px 80px; }
+
+.hero { text-align: center; margin-bottom: 56px; }
+.logo { width: 84px; height: 84px; border-radius: 18px; box-shadow: 0 16px 48px rgba(99,102,241,.4); }
+h1 { font-size: 44px; font-weight: 800; letter-spacing: -.02em; margin: 18px 0 12px; }
+.brand {
+  background: linear-gradient(90deg, #c4b5fd, #fbbf24);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.lead { font-size: 17px; color: var(--text-dim); max-width: 640px; margin: 0 auto; }
+
+.card {
+  background: var(--bg-2); border: 1px solid var(--line);
+  border-radius: 16px; padding: 28px; margin-bottom: 40px;
+}
+h2 {
+  font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--gold); margin: 0 0 16px;
+}
+
+.legal-points {
+  list-style: none; padding: 0; margin: 0 0 24px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.legal-points li {
+  padding: 12px 14px; border-radius: 10px;
+  background: rgba(255,255,255,.02); border: 1px solid var(--line-2);
+  font-size: 14px; color: #d6d3e2;
+}
+.legal-points strong { color: #fff; }
+
+.cta-primary {
+  display: inline-block; padding: 14px 22px; border: 0; border-radius: 10px;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent));
+  color: #fff; font: inherit; font-weight: 800; font-size: 14px; cursor: pointer;
+  letter-spacing: .03em;
+  box-shadow: 0 12px 32px rgba(99,102,241,.4);
+  transition: transform .12s ease, filter .12s ease;
+}
+.cta-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+.feature-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;
+}
+.feature {
+  background: var(--bg-2); border: 1px solid var(--line-2);
+  border-radius: 14px; padding: 20px;
+}
+.f-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(139,92,246,.12); border: 1px solid rgba(139,92,246,.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; color: var(--accent); margin-bottom: 12px;
+}
+.feature h3 { margin: 0 0 6px; font-size: 16px; font-weight: 700; }
+.feature p { margin: 0; color: var(--text-dim); font-size: 13.5px; line-height: 1.6; }
+
+.tier-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.tier {
+  border-radius: 14px; padding: 22px;
+  background: var(--bg-2); border: 1px solid var(--line-2);
+}
+.tier.pro {
+  background: linear-gradient(135deg, rgba(245,158,11,.08), rgba(239,68,68,.05));
+  border-color: rgba(245,158,11,.3);
+}
+.t-name {
+  font-weight: 800; font-size: 14px; letter-spacing: .04em;
+  color: #fff; margin-bottom: 14px;
+}
+.tier.pro .t-name { color: var(--gold); }
+.tier ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.tier li { font-size: 13.5px; color: #d6d3e2; padding-left: 20px; position: relative; }
+.tier li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+.tier strong { color: #fff; }
+.t-cta {
+  display: inline-block; margin-top: 14px; padding: 8px 14px;
+  background: rgba(245,158,11,.18); color: var(--gold);
+  border: 1px solid rgba(245,158,11,.4); border-radius: 8px;
+  font-weight: 700; font-size: 12.5px; text-decoration: none;
+  letter-spacing: .04em;
+}
+.t-cta:hover { background: rgba(245,158,11,.28); color: #fff; }
+.tiers-note { font-size: 12.5px; color: var(--text-dim); text-align: center; margin: 16px 0 0; }
+
+.ftr { margin-top: 60px; text-align: center; color: var(--text-dim); font-size: 12px; }
+.ftr a { margin: 0 6px; }
+
+@media (max-width: 700px) {
+  .feature-grid, .tier-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 32px; }
+}

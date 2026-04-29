@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jobmeta</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<header class="app-hdr">
+  <div class="hdr-inner">
+    <a class="brand-link" href="welcome.html">
+      <img src="../icons/icon-32.png" alt="" class="logo">
+      <span class="brand">jobmeta</span>
+    </a>
+    <nav class="tabs">
+      <button class="tab active" data-tab="match">match score</button>
+      <button class="tab" data-tab="write">write a letter</button>
+      <button class="tab" data-tab="saved">saved</button>
+    </nav>
+    <div class="hdr-right">
+      <span class="status-pill" id="status-pill">FREE</span>
+      <a class="hdr-link" href="options.html">profile →</a>
+    </div>
+  </div>
+</header>
+
+<main class="app-main">
+
+<!-- =============== MATCH TAB =============== -->
+<section class="panel" id="panel-match">
+  <div class="panel-head">
+    <h1>how well do you fit this job?</h1>
+    <p>paste the job description below. we score the fit against your profile, list what matched, and call out the gaps you should address up-front in your application.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="col">
+      <label class="lbl">job description</label>
+      <textarea id="match-jd" rows="14" placeholder="paste the full text of the job description here…"></textarea>
+      <div class="meta-row">
+        <input id="match-title" type="text" placeholder="job title (optional)">
+        <input id="match-company" type="text" placeholder="company (optional)">
+      </div>
+      <button id="match-btn" class="btn-primary">score this job →</button>
+      <div id="match-msg" class="msg"></div>
+    </div>
+    <div class="col">
+      <div class="score-card" id="score-card" hidden>
+        <div class="score-ring">
+          <svg viewBox="0 0 120 120" width="120" height="120">
+            <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(255,255,255,.06)" stroke-width="10"/>
+            <circle id="score-arc" cx="60" cy="60" r="52" fill="none" stroke="url(#scoreGrad)" stroke-width="10" stroke-dasharray="0 327" stroke-linecap="round" transform="rotate(-90 60 60)"/>
+            <defs>
+              <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#6366f1"/>
+                <stop offset="100%" stop-color="#8b5cf6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="score-num" id="score-num">0</div>
+        </div>
+        <div class="score-verdict" id="score-verdict"></div>
+        <div class="score-summary" id="score-summary"></div>
+        <div class="score-section">
+          <h3 class="hits-title">what matched</h3>
+          <ul id="score-hits" class="hits-list"></ul>
+        </div>
+        <div class="score-section">
+          <h3 class="gaps-title">gaps to address</h3>
+          <ul id="score-gaps" class="gaps-list"></ul>
+        </div>
+        <div class="score-actions">
+          <button id="score-write-letter" class="btn-ghost">draft a cover letter for this role →</button>
+        </div>
+      </div>
+      <div class="empty-state" id="match-empty">
+        <div class="empty-icon">◎</div>
+        <p>your match score appears here.</p>
+        <p class="empty-sub">on a real ATS page, the floating "match score" button does this automatically — no copy/paste needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WRITE TAB =============== -->
+<section class="panel" id="panel-write" hidden>
+  <div class="panel-head">
+    <h1>draft a cover letter</h1>
+    <p>paste the job description, set your tone, get a tailored 3-paragraph letter. uses your active profile — change profile in <a href="options.html">settings</a>.</p>
+  </div>
+
+  <div class="grid-2">
+    <div class="col">
+      <label class="lbl">job description</label>
+      <textarea id="write-jd" rows="14" placeholder="paste the full text of the job description here…"></textarea>
+      <div class="meta-row">
+        <input id="write-title" type="text" placeholder="job title (optional)">
+        <input id="write-company" type="text" placeholder="company (optional)">
+      </div>
+      <div class="meta-row">
+        <select id="write-tone">
+          <option value="professional">professional</option>
+          <option value="warm">warm</option>
+          <option value="concise">concise</option>
+          <option value="enthusiastic">enthusiastic</option>
+        </select>
+        <select id="write-language">
+          <option value="en">English</option><option value="de">Deutsch</option><option value="es">Español</option>
+          <option value="fr">Français</option><option value="it">Italiano</option><option value="pt">Português</option>
+          <option value="nl">Nederlands</option><option value="pl">Polski</option><option value="ja">日本語</option>
+          <option value="ko">한국어</option><option value="zh">中文</option>
+        </select>
+      </div>
+      <button id="write-btn" class="btn-primary">draft my letter →</button>
+      <div id="write-msg" class="msg"></div>
+    </div>
+    <div class="col">
+      <div class="letter-card" id="letter-card" hidden>
+        <div class="letter-head">
+          <h3>draft</h3>
+          <div class="letter-actions">
+            <button id="letter-copy" class="btn-ghost-sm">copy</button>
+            <button id="letter-save" class="btn-ghost-sm">save</button>
+          </div>
+        </div>
+        <pre id="letter-body"></pre>
+      </div>
+      <div class="empty-state" id="write-empty">
+        <div class="empty-icon">✎</div>
+        <p>your letter draft appears here.</p>
+        <p class="empty-sub">three paragraphs. concrete. no clichés. open it. tweak it. send it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== SAVED TAB =============== -->
+<section class="panel" id="panel-saved" hidden>
+  <div class="panel-head">
+    <h1>saved letters &amp; scores</h1>
+    <p>everything you save here lives only in this browser. clear it any time.</p>
+  </div>
+  <div id="saved-list" class="saved-list">
+    <div class="empty-state">
+      <div class="empty-icon">⌘</div>
+      <p>nothing saved yet.</p>
+      <p class="empty-sub">draft a letter or score a match, then click "save" to keep it here.</p>
+    </div>
+  </div>
+  <div class="saved-actions" id="saved-actions" hidden>
+    <button id="saved-clear" class="btn-ghost danger">clear all</button>
+  </div>
+</section>
+
+</main>
+
+<footer class="app-ftr">
+  <p>
+    <a href="https://extensions.voiddo.com/jobmeta/"        target="_blank" rel="noopener">jobmeta</a>
+    <span class="dot">·</span>
+    <a href="https://extensions.voiddo.com/jobmeta/privacy/" target="_blank" rel="noopener">privacy</a>
+    <span class="dot">·</span>
+    <a href="https://extensions.voiddo.com/jobmeta/terms/"   target="_blank" rel="noopener">terms</a>
+    <span class="dot">·</span>
+    <a href="https://extensions.voiddo.com/jobmeta/refund/"  target="_blank" rel="noopener">refund</a>
+    <span class="dot">·</span>
+    <span id="ver">v2.0.0</span>
+  </p>
+</footer>
+
+<script src="../shared/constants.js"></script>
+<script src="../shared/browser.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
